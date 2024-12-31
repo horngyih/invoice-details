@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Invoice Details</title>
+    </head>
+    <body>
+        <h1>Invoice Details</h1>
+        <div>
+            <form action="#" method="post" data-th-action="@{/invoice}" data-th-object="${invoiceDetails}">
+                <label for="invoice-id" class="required">Invoice ID</label>
+                <input type="text" id="invoice-id" name="invoiceID" placeholder="Invoice ID" class="required" required data-th-field="${invoiceDetails.invoiceID}"/>
+
+                <label for="fullname" class="required">Company/Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Company/Full Name" class="required" required />
+
+                <fieldset>
+                    <legend>Tax Information</legend>
+                    <label for="tin" class="required">Tax Identification Number (TIN):</label>
+                    <input type="text" id="tin" name="taxID" placeholder="Tax Identification Number" class="required" required>
+
+                    <label for="company-registration">Company Registration</label>
+                    <input type="text" id="company-registration" name="companyRegistration" placeholder="Company Registration" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Billing Address</legend>
+                    <label for="address-line-1" class="required">Address</label>
+                    <input type="text" id="address-line-1" name="address1" placeholder="Address" class="required" required />
+
+                    <label for="address-line-2">Address (Optional)</label>
+                    <input type="text" id="address-line-2" name="address2" placeholder="Address (optional)" />
+
+                    <label for="city" class="required">City</label>
+                    <input type="text" id="city" name="city" placeholder="City" class="required" required />
+
+                    <label for="state" class="required">State</label>
+                    <input type="text" id="state" name="state" placeholder="State" class="required" required />
+
+                    <label for="postcode" class="required">Post Code</label>
+                    <input type="text" id="postcode" name="postcode" placeholder="Postcode" class="required" required>
+
+                    <label for="country" class="required">Country</label>
+                    <input type="text" class="required" name="country" id="country" placeholder="Country" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+
+                    <label for="phone" class="required">Phone Contact</label>
+                    <input type="text" class="required" id="phone" name="phone" placeholder="Phone Contact" required>
+
+                    <label for="fax">Fax</label>
+                    <input type="text" class="required" id="fax" name="fax" placeholder="Fax" required>
+
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" class="required" id="email" name="email" placeholder="Email Address" required>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
